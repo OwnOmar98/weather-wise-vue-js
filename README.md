@@ -1,45 +1,59 @@
-# weather-wise-vue
+# Vue 3 Authentication App
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a Vue 3 application with user authentication (login/register), light/dark theme toggling, and basic protected routing. It uses the following technologies:
 
-## Recommended IDE Setup
+- **Vue 3** with `<script setup lang=ts>`
+- **TypeScript**
+- **Pinia** for state management
+- **Vue Router** for routing
+- **Vuetify** as the UI framework
+- **Axios** for HTTP requests
+- **Zod** for form validation
+- **JWT**-based authentication (via localStorage)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 📁 Project Structure
 
-## Type Support for `.vue` Imports in TS
+```bash
+.
+├── assets/ # Global CSS and styles
+├── components/ # Shared UI components (e.g., ChangeTheme)
+├── helpers/ # Interfaces, enums, constants
+├── plugins/ # Axios, Vuetify, Pinia configuration
+├── router/ # Vue Router definitions
+├── stores/ # Pinia stores (e.g., auth)
+├── views/ # Page components (Login, Register)
+├── App.vue # Root component
+└── main.ts # App entry point
+```
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 🚀 Features
 
-## Customize configuration
+- JWT Authentication (login/register)
+- Auto logout on 401 errors
+- Vuetify-based theme switcher (light/dark mode)
+- Route protection and redirection
+- Centralized Axios config with interceptors
+- Zod validation for forms
+- Clean and responsive design
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🛠️ Setup Instructions
 
-## Project Setup
+### Installation
 
-```sh
+```bash
 pnpm install
 ```
 
-### Compile and Hot-Reload for Development
+### Environment Variables
 
-```sh
+Create a `.env` file with:
+
+```bash
+VITE_BASE_URL=http://localhost:5000/api/
+```
+
+### Running the App
+
+```bash
 pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-pnpm test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
 ```
